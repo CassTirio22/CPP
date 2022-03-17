@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 00:29:10 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/17 02:27:57 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/17 02:45:42 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,17 @@ void	PhoneBook::aff_book(void){
 		this->print_line(this->contact_lst[i].get_nickname());
 		std::cout << std::endl;
 	}
-	std::cout << "Enter a id : ";
+	std::cout << "Enter a ID : ";
 	std::getline(std::cin, input);
-	id = std::stoi(input);
+	std::stoi(input, &id, 10);
 	if (id < 0 && id > this->nb - 1){
-		std::cout << "Please enter a valid id ..." << std::endl;
+		std::cout << "Please enter a valid ID ..." << std::endl;
 		return (this->aff_book());
 	}
-	std::cout << "First name : " << this->contact_lst[id].get_first_name() << std::endl;
-	std::cout << "Last name : " << this->contact_lst[id].get_last_name() << std::endl;
-	std::cout << "Nickname : " << this->contact_lst[id].get_nickname() << std::endl;
-	std::cout << "Phone number : " << this->contact_lst[id].get_number() << std::endl;
+	std::cout << "First name     : " << this->contact_lst[id].get_first_name() << std::endl;
+	std::cout << "Last name      : " << this->contact_lst[id].get_last_name() << std::endl;
+	std::cout << "Nickname       : " << this->contact_lst[id].get_nickname() << std::endl;
+	std::cout << "Phone number   : " << this->contact_lst[id].get_number() << std::endl;
 	std::cout << "Darkest secret : " << this->contact_lst[id].get_secret() << std::endl;
 }
 
