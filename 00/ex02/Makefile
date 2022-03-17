@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/17 00:14:16 by ctirions          #+#    #+#              #
-#    Updated: 2022/03/17 14:36:07 by ctirions         ###   ########.fr        #
+#    Created: 2022/03/17 16:54:33 by ctirions          #+#    #+#              #
+#    Updated: 2022/03/17 16:55:06 by ctirions         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,8 @@ RESET		= $(shell tput -Txterm sgr0)
 CXX			=	clang++
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-SRCS		=	main.cpp				\
-				phone_book.class.cpp	\
-				contact.class.cpp
+SRCS		=	tests.cpp	\
+				Account.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
