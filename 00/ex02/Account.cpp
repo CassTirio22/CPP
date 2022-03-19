@@ -6,14 +6,18 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:01:25 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/17 17:29:59 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/18 11:42:29 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <ctime>
 #include <iostream>
-#include <string>
+
+int	Account::_nbAccounts = 0;
+int	Account::_totalAmount = 0;
+int	Account::_totalNbDeposits = 0;
+int	Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) {
 	static int	index = 0;
@@ -25,9 +29,10 @@ Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0)
 	std::cout << " index:" << this->_accountIndex << ";amount:" << this->_amount << ";created" << std::endl;
 	index++;
 }
+
 Account::~Account(void){
 	this->_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex << ";amount:" << this->_amount << ";c" << std::endl;
+	std::cout << " index:" << this->_accountIndex << ";amount:" << this->_amount << ";closed" << std::endl;
 }
 
 int  Account::getNbAccounts(void){
@@ -74,4 +79,13 @@ bool	Account::makeWithdrawal(int withdrawal){
 	this->_nbWithdrawals++;
 	_totalNbWithdrawals++;
 	return (true);
+}
+
+int	Account::checkAmount(void) const{
+	return (this->_amount);
+}
+
+void	Account::displayStatus(void) const{
+	_displayTimestamp();
+	std::cout << " index:" << this->_accountIndex << ";amount:" << this->_amount << ";deposits:" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
 }

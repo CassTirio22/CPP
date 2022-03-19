@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 00:29:10 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/17 14:25:48 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/18 15:59:08 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	PhoneBook::aff_book(void){
 
 	if (!this->nb)
 		return ;
-	std::cout << "|Index     |First name|Last name |Nickname  |" << std::endl;
+	std::cout << "|     Index|First name| Last name|  Nickname|" << std::endl;
 	for (int i = 0; i < this->nb; i++){
-		std::cout << "|" << i << "         |";
+		std::cout << "|         " << i << "|";
 		this->print_line(this->contact_lst[i].get_first_name());
 		this->print_line(this->contact_lst[i].get_last_name());
 		this->print_line(this->contact_lst[i].get_nickname());
@@ -80,9 +80,9 @@ void	PhoneBook::print_line(std::string str){
 	if (str.length() > 10)
 		std::cout << str.substr(0, 9) << ".|";
 	else{
-		std::cout << str;
 		for (int i = 0; i < (int)(10 - str.length()); i++)
 			std::cout << " ";
+		std::cout << str;
 		std::cout << "|";
 	}
 }

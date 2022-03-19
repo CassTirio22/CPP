@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/17 16:54:33 by ctirions          #+#    #+#              #
-#    Updated: 2022/03/18 12:11:46 by ctirions         ###   ########.fr        #
+#    Created: 2022/03/19 14:16:43 by ctirions          #+#    #+#              #
+#    Updated: 2022/03/19 17:16:06 by ctirions         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +23,11 @@ RESET		= $(shell tput -Txterm sgr0)
 CXX			=	clang++
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-SRCS		=	tests.cpp	\
-				Account.cpp
-
+SRCS		=	main.cpp	\
+				replace.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
-NAME		=	logs
+NAME		=	replace
 
 .c.o:
 			@$(CXX) $(FLAGS) -c -I ./ $< -o $(<:.cpp=.o)
