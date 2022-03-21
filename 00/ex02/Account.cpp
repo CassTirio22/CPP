@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:01:25 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/18 11:42:29 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/21 18:10:24 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,20 +69,26 @@ void	Account::makeDeposit(int deposit){
 	_totalAmount += deposit;
 	this->_nbDeposits++;
 	_totalNbDeposits++;
+	_displayTimestamp();
+	std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->_amount - deposit << ";deposit:" << deposit << ";amount:" << this->_amount << ";nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal){
 	if (this->_amount < withdrawal)
-		return (false);
+		return (this->checkAmount());
 	this->_amount -= withdrawal;
 	_totalAmount -= withdrawal;
 	this->_nbWithdrawals++;
 	_totalNbWithdrawals++;
+	_displayTimestamp();
+	std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->_amount + withdrawal << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	return (true);
 }
 
 int	Account::checkAmount(void) const{
-	return (this->_amount);
+	_displayTimestamp();
+	std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";withdrawals:refused" << std::endl;
+	return (1);
 }
 
 void	Account::displayStatus(void) const{
