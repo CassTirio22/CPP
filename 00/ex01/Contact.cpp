@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:23:09 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/17 14:25:42 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/23 16:18:41 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/phone_book.class.hpp"
+#include "includes/PhoneBook.hpp"
 
 Contact::Contact(void){}
 Contact::~Contact(void){}

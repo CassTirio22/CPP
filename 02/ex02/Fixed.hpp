@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 02:36:47 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/22 05:17:32 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/23 16:58:58 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ public:
 	Fixed	operator*(Fixed const &rhs) const;
 	Fixed	operator/(Fixed const &rhs) const;
 
-	Fixed	operator++(int rhs);
-	Fixed	operator--(int rhs);
+	Fixed	operator++(int nb);
+	Fixed	operator--(int nb);
 	Fixed	&operator++(void);
 	Fixed	&operator--(void);
 
