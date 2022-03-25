@@ -6,7 +6,7 @@
 #    By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 13:22:54 by ctirions          #+#    #+#              #
-#    Updated: 2022/03/24 17:31:57 by ctirions         ###   ########.fr        #
+#    Updated: 2022/03/25 13:52:52 by ctirions         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,17 +21,17 @@ WHITE       = $(shell tput -Txterm setaf 7)
 RESET       = $(shell tput -Txterm sgr0)
 
 CXX   =	c++
-FLAGS =	-Wall -Wextra -Werror -std=c++98
+FLAGS =	-Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow
 
-SRCS  =	main.cpp		\
-		ClapTrap.cpp	\
+SRCS  =	ClapTrap.cpp	\
 		ScavTrap.cpp	\
 		FragTrap.cpp	\
-		DiamondTrap
+		DiamondTrap.cpp	\
+		main.cpp
 
 OBJS  =	$(SRCS:.cpp=.o)
 
-NAME  =	FragTrap
+NAME  =	DiamondTrap
 
 .cpp.o:
 		@$(CXX) $(FLAGS) -c -I ./ $< -o $(<:.cpp=.o)

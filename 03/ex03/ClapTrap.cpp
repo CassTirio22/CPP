@@ -6,13 +6,13 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:24:11 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/24 15:42:56 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/25 14:10:36 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("Kaiba"), _hp(10), _energy(10), _attDmg(0){
+ClapTrap::ClapTrap(void) : _name("Kaibaaaa_clap_name"), _hp(10), _energy(10), _attDmg(0){
 	std::cout << "ClapTrap default constructor called!" << std::endl;
 }
 
