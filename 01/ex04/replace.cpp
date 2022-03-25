@@ -6,13 +6,18 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:51:24 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/20 17:46:03 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/25 15:16:15 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
-Replace::Replace(char *argv1, char *argv2, char *argv3) : _filename(argv1), _s1(argv2), _s2(argv3) {}
+Replace::Replace(char *argv1, char *argv2, char *argv3){
+	this->_filename = argv1;
+	this->_s1 = argv2;
+	this->_s2 = argv3;
+}
+
 Replace::~Replace(){}
 
 void	Replace::checkArgs(void){
@@ -23,7 +28,6 @@ void	Replace::checkArgs(void){
 }
 
 std::string	Replace::openFilename(void){
-	char			c;
 	std::ifstream	fin(this->_filename);
 	
 	if (!fin.good())
