@@ -6,19 +6,24 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:35:35 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 18:41:14 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/28 20:23:15 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : type("Nothing"){}
+Animal::Animal(void) : type("Nothing"){
+	std::cout << "An animal is born" << std::endl;
+}
 
 Animal::Animal(Animal const &src){
+	std::cout << "A copy animal is born" << std::endl;
 	*this = src;
 }
 
-Animal::~Animal(void){}
+Animal::~Animal(void){
+	std::cout << "An animal is dead" << std::endl;
+}
 
 Animal	&Animal::operator=(Animal const &rhs){
 	this->type = rhs.type;
@@ -26,12 +31,7 @@ Animal	&Animal::operator=(Animal const &rhs){
 }
 
 void	Animal::makeSound(void) const{
-	if (this->type == "Nothing")
-		return ;
-	else if (this->type == "Dog")
-		std::cout << "Waf waf !!" << std::endl;
-	else if (this->type == "Cat")
-		std::cout << "Miaou..." << std::endl;
+	std::cout << "I'm a basic animal" << std::endl;
 }
 
 std::string	Animal::getType(void) const{ return (this->type); }
