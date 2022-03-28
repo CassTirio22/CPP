@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 14:41:52 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 20:18:24 by ctirions         ###   ########.fr       */
+/*   Created: 2022/03/28 15:02:33 by ctirions          #+#    #+#             */
+/*   Updated: 2022/03/28 19:39:56 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "Animal.hpp"
+# include <string>
 
-class Cat : virtual public Animal{
+class Brain{
+protected:
+	std::string ideas[100];
+	int	_index;
+
 public:
-	Cat(void);
-	Cat(Cat const &src);
-	~Cat(void);
+	Brain(void);
+	Brain(Brain const &src);
+	~Brain(void);
 
-	Cat		&operator=(Cat const &rhs);
-	void	makeSound(void) const;
-	
-};
+	Brain	&operator=(Brain const &rhs);
 
-class WrongCat : public WrongAnimal{
-public:
-	WrongCat(void);
-	WrongCat(WrongCat const &src);
-	~WrongCat(void);
-
-	WrongCat	&operator=(WrongCat const &rhs);
-	void		makeSound(void) const;
+	std::string	getIdea(int i) const;
+	void		setIdea(std::string idea);
 
 };
 

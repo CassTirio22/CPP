@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 14:48:40 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 20:08:06 by ctirions         ###   ########.fr       */
+/*   Created: 2022/03/28 15:07:20 by ctirions          #+#    #+#             */
+/*   Updated: 2022/03/28 19:42:14 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-Dog::Dog(void) : Animal(){
-	this->Animal::type = "Dog";
-}
 
-Dog::Dog(Dog const &src){
-	*this = src;
-}
+Brain::Brain(void) : _index(0) {}
+Brain::Brain(Brain const &src){ *this = src; }
+Brain::~Brain(void){}
 
-Dog::~Dog(void){}
-
-Dog	&Dog::operator=(Dog const &rhs){
-	this->Animal::type = rhs.Animal::type;
+Brain	&Brain::operator=(Brain const &rhs){
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = rhs.getIdea(i);
 	return (*this);
 }
 
-void	Dog::makeSound(void) const{
-	std::cout << "Waf waf!" << std::endl;
+std::string Brain::getIdea(int i) const{ return (this->ideas[i]); }
+
+void	Brain::setIdea(std::string idea){
+	this->ideas[_index] = idea;
+	this->_index++;
+	this->_index %= 100;
 }

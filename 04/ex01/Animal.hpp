@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 14:41:52 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 20:18:24 by ctirions         ###   ########.fr       */
+/*   Created: 2022/03/25 14:31:51 by ctirions          #+#    #+#             */
+/*   Updated: 2022/03/28 19:03:08 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef ANIMALS_HPP
+# define ANIMALS_HPP
 
-#include "Animal.hpp"
+# include <iostream>
+# include <string>
 
-class Cat : virtual public Animal{
+class Animal{
+protected:
+	std::string type;
+
 public:
-	Cat(void);
-	Cat(Cat const &src);
-	~Cat(void);
+	Animal(void);
+	Animal(Animal const &src);
+	~Animal();
 
-	Cat		&operator=(Cat const &rhs);
-	void	makeSound(void) const;
-	
-};
+	Animal	&operator=(Animal const &rhs);
 
-class WrongCat : public WrongAnimal{
-public:
-	WrongCat(void);
-	WrongCat(WrongCat const &src);
-	~WrongCat(void);
-
-	WrongCat	&operator=(WrongCat const &rhs);
 	void		makeSound(void) const;
+	std::string	getType(void) const;
 
 };
+
+# include "Dog.hpp"
+# include "Cat.hpp"
 
 #endif

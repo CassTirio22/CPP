@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 14:41:52 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 20:18:24 by ctirions         ###   ########.fr       */
+/*   Created: 2022/03/25 14:48:40 by ctirions          #+#    #+#             */
+/*   Updated: 2022/03/28 19:52:41 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "Dog.hpp"
 
-#include "Animal.hpp"
+Dog::Dog(void) : Animal(){
+	this->_brain = new Brain;
+	this->Animal::type = "Dog";
+}
 
-class Cat : virtual public Animal{
-public:
-	Cat(void);
-	Cat(Cat const &src);
-	~Cat(void);
+Dog::Dog(Dog const &src){ *this = src; }
 
-	Cat		&operator=(Cat const &rhs);
-	void	makeSound(void) const;
-	
-};
+Dog::~Dog(void){ delete this->_brain; }
 
-class WrongCat : public WrongAnimal{
-public:
-	WrongCat(void);
-	WrongCat(WrongCat const &src);
-	~WrongCat(void);
+Dog	&Dog::operator=(Dog const &rhs){
+	this->Animal::type = rhs.Animal::type;
+	return (*this);
+}
 
-	WrongCat	&operator=(WrongCat const &rhs);
-	void		makeSound(void) const;
-
-};
-
-#endif
+Brain	&Dog::getBrain(void) const{ return (*(this->_brain)); }

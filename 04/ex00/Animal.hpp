@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:31:51 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/25 15:24:40 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/28 20:18:20 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ public:
 
 	Animal	&operator=(Animal const &rhs);
 
-	void		makeSound(void) const;
-	std::string	getType(void) const;
+	virtual void	makeSound(void) const;
+	std::string		getType(void) const;
 
 };
 

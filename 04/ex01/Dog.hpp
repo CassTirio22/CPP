@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 14:41:52 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 20:18:24 by ctirions         ###   ########.fr       */
+/*   Created: 2022/03/25 14:48:06 by ctirions          #+#    #+#             */
+/*   Updated: 2022/03/28 19:52:20 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include "Animal.hpp"
+# include "Brain.hpp"
+# include "Animal.hpp"
 
-class Cat : virtual public Animal{
+class Dog : public Animal, public Brain{
+private:
+	Brain	*_brain;
+
 public:
-	Cat(void);
-	Cat(Cat const &src);
-	~Cat(void);
+	Dog(void);
+	Dog(Dog const &src);
+	~Dog(void);
 
-	Cat		&operator=(Cat const &rhs);
-	void	makeSound(void) const;
+	Dog		&operator=(Dog const &rhs);
+	Brain	&getBrain(void) const;
 	
-};
-
-class WrongCat : public WrongAnimal{
-public:
-	WrongCat(void);
-	WrongCat(WrongCat const &src);
-	~WrongCat(void);
-
-	WrongCat	&operator=(WrongCat const &rhs);
-	void		makeSound(void) const;
-
 };
 
 #endif
