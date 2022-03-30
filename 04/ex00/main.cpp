@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:48:59 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 20:17:08 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:16:01 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@ int main(void){
     k->makeSound();
 	std::cout << std::endl << meta->getType() << std::endl;
     meta->makeSound();
+
+	system("leaks Polymorphism");
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 14:28:41 by ctirions          #+#    #+#              #
-#    Updated: 2022/03/25 14:56:50 by ctirions         ###   ########.fr        #
+#    Updated: 2022/03/30 15:15:11 by ctirions         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRCS  =	Animal.cpp	\
 
 OBJS  =	$(SRCS:.cpp=.o)
 
-NAME  =	Polymorphisme
+NAME  =	Polymorphism
 
 .cpp.o:
 		@$(CXX) $(FLAGS) -c -I ./ $< -o $(<:.cpp=.o)

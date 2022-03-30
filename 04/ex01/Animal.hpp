@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:31:51 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 20:20:01 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:23:16 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ protected:
 public:
 	Animal(void);
 	Animal(Animal const &src);
-	~Animal();
+	virtual ~Animal();
 
 	Animal	&operator=(Animal const &rhs);
 
-	void		makeSound(void) const;
-	std::string	getType(void) const;
+	virtual void	makeSound(void) const;
+	std::string		getType(void) const;
 
 };
 

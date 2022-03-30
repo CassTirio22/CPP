@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:02:33 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 19:39:56 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:23:26 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <string>
 
 class Brain{
-protected:
+private:
 	std::string ideas[100];
 	int	_index;
 

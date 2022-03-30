@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:41:52 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/28 19:52:47 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:23:34 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Brain.hpp"
 # include "Animal.hpp"
 
-class Cat : public Animal, public Brain{
+class Cat : public Animal{
 private:
 	Brain	*_brain;
 
@@ -25,8 +25,9 @@ public:
 	Cat(Cat const &src);
 	~Cat(void);
 
-	Cat		&operator=(Cat const &rhs);
-	Brain	&getBrain(void) const;
+	Cat				&operator=(Cat const &rhs);
+	Brain			&getBrain(void) const;
+	void	makeSound(void) const;
 	
 };
 

@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 14:48:06 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/30 15:23:39 by ctirions         ###   ########.fr       */
+/*   Created: 2022/03/25 14:31:51 by ctirions          #+#    #+#             */
+/*   Updated: 2022/03/30 15:25:06 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef ANIMALS_HPP
+# define ANIMALS_HPP
 
-# include "Brain.hpp"
-# include "Animal.hpp"
+# include <iostream>
+# include <string>
 
-class Dog : public Animal{
-private:
-	Brain	*_brain;
+class Animal{
+protected:
+	std::string type;
 
 public:
-	Dog(void);
-	Dog(Dog const &src);
-	~Dog(void);
+	Animal(void);
+	Animal(Animal const &src);
+	virtual ~Animal();
 
-	Dog				&operator=(Dog const &rhs);
-	Brain			&getBrain(void) const;
-	void	makeSound(void) const;
-	
+	Animal	&operator=(Animal const &rhs);
+
+	virtual void	makeSound(void) const = 0;
+	std::string		getType(void) const;
+
 };
+
+# include "Dog.hpp"
+# include "Cat.hpp"
 
 #endif
