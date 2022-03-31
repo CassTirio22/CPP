@@ -6,7 +6,7 @@
 #    By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 15:44:26 by ctirions          #+#    #+#              #
-#    Updated: 2022/03/30 15:45:23 by ctirions         ###   ########.fr        #
+#    Updated: 2022/03/31 18:01:02 by ctirions         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,13 @@ CXX   =	c++
 FLAGS =	-Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow
 
 SRCS  =	main.cpp		\
-		AMateria.cpp
+		Materia.cpp		\
+		Character.cpp	\
+		Ice.cpp
 
 OBJS  =	$(SRCS:.cpp=.o)
 
-NAME  =	Polymorphism
+NAME  =	Interface
 
 .cpp.o:
 		@$(CXX) $(FLAGS) -c -I ./ $< -o $(<:.cpp=.o)

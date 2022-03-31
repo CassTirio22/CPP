@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:04:22 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/30 16:41:58 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:46:52 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ICE_HPP
 
 # include "Materia.hpp"
+# include "Character.hpp"
 
 class Ice : public AMateria{
 public:
@@ -24,7 +25,7 @@ public:
 	Ice	&operator=(Ice const &rhs);
 
 	AMateria	*clone(void) const;
-	//void		use(ICharacter &target);
+	void		use(ICharacter &target);
 
 };
 
