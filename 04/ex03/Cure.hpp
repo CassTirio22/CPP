@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 11:48:03 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/07 14:34:23 by ctirions         ###   ########.fr       */
+/*   Created: 2022/04/07 15:25:05 by ctirions          #+#    #+#             */
+/*   Updated: 2022/04/07 15:28:11 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CURE_HPP
+# define CURE_HPP
 
-int main(void){
-    Zombie      *horde;
-    const int   N = 4;
-    
-    horde = zombieHorde(N, "Babo");
-    for (int i = 0; i < N; i++)
-        horde[i].annouce();
-    delete [] horde;
-    return (0);
-}
+# include "Materia.hpp"
+# include "Character.hpp"
+
+class Cure : public AMateria{
+public:
+	Cure(void);
+	Cure(Cure const &src);
+	~Cure(void);
+
+	Cure	&operator=(Cure const &rhs);
+
+	AMateria	*clone(void) const;
+	void		use(ICharacter &target);
+
+};
+
+#endif

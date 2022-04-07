@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:34:47 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/31 17:54:46 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:40:10 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,5 @@ void	Character::unequip(int idx){
 void	Character::use(int idx, ICharacter &target){
 	if (idx < 0 || idx > 3 || !this->_materias[idx])
 		return ;
-	if (this->_materias[idx]->getType() == "ice")
-		this->_materias[idx]->use(target);
+	this->_materias[idx]->use(target);
 }

@@ -6,7 +6,7 @@
 #    By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 15:44:26 by ctirions          #+#    #+#              #
-#    Updated: 2022/03/31 18:01:02 by ctirions         ###   ########.fr        #
+#    Updated: 2022/04/07 15:35:07 by ctirions         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ FLAGS =	-Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow
 SRCS  =	main.cpp		\
 		Materia.cpp		\
 		Character.cpp	\
-		Ice.cpp
+		Ice.cpp			\
+		Cure.cpp
 
 OBJS  =	$(SRCS:.cpp=.o)
 

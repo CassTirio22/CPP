@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 11:50:37 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/18 12:43:31 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:32:50 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Zombie::Zombie(void){
 }
 
 Zombie::~Zombie(void){
-    std::cout << this->name << " isn't actualy disposed to eat brainz..." << std::endl;
+    std::cout << this->name << " is actualy dead..." << std::endl;
 }
 
 void    Zombie::annouce(void){

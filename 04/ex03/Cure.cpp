@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 11:48:03 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/07 14:34:23 by ctirions         ###   ########.fr       */
+/*   Created: 2022/04/07 15:24:40 by ctirions          #+#    #+#             */
+/*   Updated: 2022/04/07 15:40:37 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Cure.hpp"
 
-int main(void){
-    Zombie      *horde;
-    const int   N = 4;
-    
-    horde = zombieHorde(N, "Babo");
-    for (int i = 0; i < N; i++)
-        horde[i].annouce();
-    delete [] horde;
-    return (0);
+Cure::Cure(void) : AMateria("cure"){}
+Cure::Cure(Cure const &src){
+	this->_type = src.getType();
+}
+Cure::~Cure(void){}
+
+Cure	&Cure::operator=(Cure const &rhs){
+	this->_type = rhs.getType();
+	return (*this);
+}
+
+AMateria	*Cure::clone(void) const{
+	return (new Cure(*this));
+}
+
+void	Cure::use(ICharacter &target){
+	std::cout << "* heals "<< target.getName() << "'s wounds *" << std::endl;
 }
