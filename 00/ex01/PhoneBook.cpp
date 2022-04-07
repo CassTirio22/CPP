@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 00:29:10 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/23 16:20:10 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:20:32 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,12 @@ void	PhoneBook::aff_book(void){
 	}
 	std::cout << "Enter a ID : ";
 	std::getline(std::cin, input);
+	for (size_t i = 0; i < input.length(); i++){
+		if (input[i] < '0' || input[i] > '9'){
+			std::cout << "Please enter a valid ID ..." << std::endl;
+			return (this->aff_book());
+		}
+	}
 	id = std::stoi(input);
 	if (id < 0 || id > this->nb - 1){
 		std::cout << "Please enter a valid ID ..." << std::endl;
