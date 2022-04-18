@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:11:52 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/08 19:40:34 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/18 14:42:33 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ Form	*Intern::makeForm(std::string const &name, std::string const &target) const
 		if (name == dict_form[i])
 			return (dict_formPtr[i](target));
 	}
-	std::cout << "The form " << name << "doesn't exist..." << std::endl;
+	std::cout << "The form " << name << " doesn't exist..." << std::endl;
 	return (NULL);
 }
