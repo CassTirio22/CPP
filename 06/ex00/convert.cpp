@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:29:20 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/19 16:24:20 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/19 18:48:05 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Convert::Convert(void) : _str(NULL), _i(0), _f(0), _d(0), _c(0){}
 Convert::Convert(std::string const str) : _str(str){}
+Convert::~Convert(void){}
 Convert::Convert(Convert const &src){
 	this->_str = src.getStr();
 	this->_i = src.getI();
@@ -38,8 +39,8 @@ double		Convert::getD(void) const{ return (this->_d); }
 char		Convert::getC(void) const{ return (this->_c); }
 
 int			Convert::getType(void) const{
-	int	i = -1;
-	int	j = 0;
+	size_t	i = -1;
+	size_t	j = 0;
 	if (this->_str[0] == '-' || this->_str[0] == '+')
 		i++;
 	while (++i < this->_str.length())
@@ -49,16 +50,16 @@ int			Convert::getType(void) const{
 		return (0);
 	i = -1;
 	j = 0;
-	int	k = 0;
+	size_t	k = 0;
 	if (this->_str[0] == '-' || this->_str[0] == '+')
 		i++;
 	while (++i < this->_str.length()){
 		if (this->_str[i] >= 48 && this->_str[i] <= 57)
 			j++;
-		else if (this->_str[i] == 46)
+		else if (this->_str[i] == '.')
 			k++;
 	}
-	if ((i == j - 1 && k == 1) || !(this->_str.compare("-inf")) || !(this->_str.compare("+inf")) || !(this->_str.compare("nan")))
+	if ((i == j + 1 && k == 1) || !(this->_str.compare("-inf")) || !(this->_str.compare("+inf")) || !(this->_str.compare("nan")))
 		return (1);
 	i = -1;
 	j = 0;
@@ -68,10 +69,10 @@ int			Convert::getType(void) const{
 	while (++i < this->_str.length() - 1){
 		if (this->_str[i] >= 48 && this->_str[i] <= 57)
 			j++;
-		else if (this->_str[i] == 46)
+		else if (this->_str[i] == '.')
 			k++;
 	}
-	if (i == j - 2 && k == 1 && this->_str[i] == 'f' || !(this->_str.compare("-inff")) || !(this->_str.compare("+inff")) || !(this->_str.compare("nanf")))
+	if ((i == j + 1 && k == 1 && this->_str[i] == 'f') || (!(this->_str.compare("-inff")) || !(this->_str.compare("+inff")) || !(this->_str.compare("nanf"))))
 		return (2);
 	if (this->_str.length() == 1 && this->_str[0] >= 0 && this->_str[0] <= 127)
 		return (3);
