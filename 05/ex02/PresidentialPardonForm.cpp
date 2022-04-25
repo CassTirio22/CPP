@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 14:46:09 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/08 15:12:15 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/25 15:45:31 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ PresidentialPardonForm::~PresidentialPardonForm(void){}
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs){
 	this->_sign = rhs.getSign();
-	this->_wGrade = rhs.getWGrade();
-	this->_xGrade = rhs.getXGrade();
 	return (*this);
 }
 

@@ -5,23 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 03:02:06 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/23 11:22:25 by ctirions         ###   ########.fr       */
+/*   Created: 2022/04/21 11:10:59 by ctirions          #+#    #+#             */
+/*   Updated: 2022/04/21 11:36:25 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include <string>
+#include <iostream>
 
-int main( void ) {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+typedef struct s_Data{
+	int	i;
+}				Data;
 
-	c = b;
+uintptr_t	serialize(Data *ptr){
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+Data	*deserialize(uintptr_t raw){
+	return (reinterpret_cast<Data *>(raw));
+}
 
+int	main(void){
+	Data		d;
+	Data		*d_ptr;
+	uintptr_t	u_i;
+
+	d.i = 42;
+	std::cout << "PTR          : " << &d << std::endl;
+	u_i = serialize(&d);
+	d_ptr = deserialize(u_i);
+	std::cout << "PTR          : " << d_ptr << std::endl;
+	std::cout << "Unsigned int : " << u_i << std::endl;
 	return (0);
 }

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/21 11:08:05 by ctirions          #+#    #+#              #
-#    Updated: 2022/04/21 11:08:24 by ctirions         ###   ########.fr        #
+#    Created: 2022/04/21 11:08:34 by ctirions          #+#    #+#              #
+#    Updated: 2022/04/21 11:37:08 by ctirions         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +23,11 @@ RESET       = $(shell tput -Txterm sgr0)
 CXX   =	c++
 FLAGS =	-Wall -Wextra -Werror -std=c++98
 
-SRCS  =	main.cpp	\
-		convert.cpp
+SRCS  =	main.cpp
 
 OBJS  =	$(SRCS:.cpp=.o)
 
-NAME  =	convert
+NAME  =	serialize
 
 .cpp.o:
 		@$(CXX) $(FLAGS) -c -I ./ $< -o $(<:.cpp=.o)

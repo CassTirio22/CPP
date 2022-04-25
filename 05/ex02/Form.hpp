@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:04:26 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/08 14:55:15 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/25 15:42:40 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ protected:
 	std::string const	_name;
 	std::string const	_target;
 	bool				_sign;
-	int					_wGrade;
-	int					_xGrade;
+	int const			_wGrade;
+	int const			_xGrade;
 
 public:
 	Form(void);

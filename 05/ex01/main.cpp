@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:26:10 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/07 19:19:09 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/25 15:31:55 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void){
 	try{
-		Form	form("form", 150, 150);
+		Form	form("form", 155, -1);
 	}
 	catch (std::exception &e){
 		std::cout << e.what() << std::endl;

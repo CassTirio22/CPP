@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:33:36 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/08 18:56:58 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/25 15:45:48 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ RobotomyRequestForm::~RobotomyRequestForm(void){}
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs){
 	this->_sign = rhs.getSign();
-	this->_wGrade = rhs.getWGrade();
-	this->_xGrade = rhs.getXGrade();
 	return (*this);
 }
 

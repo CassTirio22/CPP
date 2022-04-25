@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 03:02:06 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/23 11:22:25 by ctirions         ###   ########.fr       */
+/*   Created: 2022/04/21 14:11:37 by ctirions          #+#    #+#             */
+/*   Updated: 2022/04/21 14:27:19 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main( void ) {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+# include <string>
+# include <iostream>
+# include <cstdlib>
 
-	c = b;
+class Base{
+public:
+	virtual ~Base();
+};
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+class A : public Base{};
+class B : public Base{};
+class C : public Base{};
 
-	return (0);
-}
+#endif

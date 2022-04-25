@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:46:00 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/08 16:12:08 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/25 15:46:10 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void){}
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs){
 	this->_sign = rhs.getSign();
-	this->_wGrade = rhs.getWGrade();
-	this->_xGrade = rhs.getXGrade();
 	return (*this);
 }
 

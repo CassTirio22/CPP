@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:14:31 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/20 16:16:20 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/21 11:05:11 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,16 @@ void	convertAll(Convert &n){
 }
 
 int	main(int argc, char **argv){
-	if (argc != 2)
+	if (argc != 2){
+		std::cout << "Usage : ./convert <number or char>" << std::endl;
 		return (1);
+	}
 	Convert	n(argv[1]);
 	int	type = n.getType();
-	if (type == 4)
+	if (type == 4){
+		std::cout << "Usage : ./convert <number or char>" << std::endl;
 		return (1);
+	}
 	try{
 		n.setValue();
 	}
