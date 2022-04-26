@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 18:58:42 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/25 21:00:42 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/26 12:04:24 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ public:
 		this->_array = src.getArray();
 		this->_size = src.getSize();
 	}
-	~Array(void){}
+	~Array(void){
+		delete [] this->_array;
+	}
 
 	Array const	&operator=(Array const &rhs){
 		this->_array = rhs.getArray();
