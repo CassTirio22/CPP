@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:45:05 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/26 17:42:02 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/27 15:56:43 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ std::list<int>	*Span::getArray(void) const{
 
 void	Span::addNumber(int nb){
 	if (this->_array->size() == this->_size)
-		throw (std::exception());
+		throw (Span::SpanException());
 	this->_array->push_back(nb);
 }
 
@@ -44,13 +44,46 @@ void	Span::addNumbers(std::list<int>::iterator begin, std::list<int>::iterator e
 	}
 }
 
-unsigned int		Span::shortestSpan(void) const{
-	unsigned int	shortest = UINT64_MAX;
-	std::list<int>::iterator it2 = this->_array->begin()++;
-	for (std::list<int>::iterator it1 = this->_array->begin(); it1 != this->_array->end()--; it1++){
-		if (*it1 > *it2)
+int		Span::shortestSpan(void) const{
+	if (this->_array->size() == 1 || !this->_array->size())
+		throw (Span::SpanException());
+	int	shortest = INT_MAX;
+	std::list<int>::iterator it1 = this->_array->begin();
+	std::list<int>::iterator it2 = this->_array->begin();
+	it2++;
+	while (it2 != this->_array->end()){
+		if (*it1 > *it2){
+			if (*it1 - *it2 < shortest)
+				shortest = *it1 - *it2;
+		}
+		else if (*it2 - *it1 < shortest)
+			shortest = *it2 - *it1;
+		it1++;
+		it2++;
 	}
+	if (shortest == INT_MAX)
+		throw (Span::SpanException());
+	return (shortest);
 }
 
-unsigned int		Span::longestSpan(void) const{
+int		Span::longestSpan(void) const{
+	if (this->_array->size() == 1 || !this->_array->size())
+		throw (Span::SpanException());
+	int	longest = -1;
+	std::list<int>::iterator it1 = this->_array->begin();
+	std::list<int>::iterator it2 = this->_array->begin();
+	it2++;
+	while (it2 != this->_array->end()){
+		if (*it1 > *it2){
+			if (*it1 - *it2 > longest)
+				longest = *it1 - *it2;
+		}
+		else if (*it2 - *it1 > longest)
+			longest = *it2 - *it1;
+		it1++;
+		it2++;
+	}
+	if (longest == -1)
+		throw (Span::SpanException());
+	return (longest);
 }

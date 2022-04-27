@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:43:23 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/26 17:39:38 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/27 15:55:07 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,15 @@ public:
 
 	void	addNumber(int nb);
 	void	addNumbers(std::list<int>::iterator begin, std::list<int>::iterator end);
-	unsigned int		shortestSpan(void) const;
-	unsigned int		longestSpan(void) const;
-};
+	int		shortestSpan(void) const;
+	int		longestSpan(void) const;
 
+	class SpanException : public std::exception{
+	public:
+		virtual const char *what() const throw(){
+			return ("Too much numbers in the span.");
+		}
+	};
+};
 
 #endif
