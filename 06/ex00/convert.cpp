@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:29:20 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/26 14:58:50 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/28 17:52:36 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ std::string	Convert::getStr(void) const{ return (this->_str); }
 float		Convert::getValue(void) const{ return (this->_value); }
 
 void		Convert::setValue(void){
-	try{
-		this->_value = std::stof(this->_str);
-	}
-	catch (std::exception &e){
-		static_cast<void>(e);
-		if (this->_str.length() == 3)
-			this->_value = static_cast<float>(this->_str[1]);
-		else
+	if (this->isChar()){
+		if (this->_str.length() == 1)
 			this->_value = static_cast<float>(this->_str[0]);
+		else
+			this->_value = static_cast<float>(this->_str[1]);
 	}
+	else
+		this->_value = atof(this->_str.c_str());
+
 }
 
 int			Convert::getType(void) const{
@@ -86,7 +85,7 @@ bool	Convert::isDouble(void) const{
 		else if (this->_str[i] == '.')
 			k++;
 	}
-	if ((i == j + 1 && k == 1) || this->_str == "-inf" || this->_str == "+inf" || this->_str == "nan")
+	if ((i == j + 1 && k == 1) || this->_str == "-inf" || this->_str == "+inf" || this->_str == "nan" || this->_str == "inf")
 		return (true);
 	return (false);
 }
@@ -105,7 +104,7 @@ bool	Convert::isFloat(void) const{
 		else if (this->_str[i] == '.')
 			k++;
 	}
-	if ((i == j + 1 && k == 1 && this->_str[i] == 'f') || this->_str == "-inff" || this->_str == "+inff" || this->_str == "nanf")
+	if ((i == j + 1 && k == 1 && this->_str[i] == 'f') || this->_str == "-inff" || this->_str == "+inff" || this->_str == "nanf" || this->_str == "inff")
 		return (true);
 	return (false);
 }

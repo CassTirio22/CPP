@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:14:31 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/21 11:05:11 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/28 17:52:56 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,7 @@ int	main(int argc, char **argv){
 		std::cout << "Usage : ./convert <number or char>" << std::endl;
 		return (1);
 	}
-	try{
-		n.setValue();
-	}
-	catch (std::invalid_argument &e){
-		std::cout << e.what() << std::endl;
-		return (-1);
-	}
+	n.setValue();
 	convertAll(n);
 	return (0);
 }
