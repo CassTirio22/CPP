@@ -45,6 +45,5 @@ int main(void){
 	}
 	for (int i = 0; i < 6; i++)	// FREE ANIMALS
 		delete Animals[i];
-	system("leaks Polymorphism");
 	return (0);
 }

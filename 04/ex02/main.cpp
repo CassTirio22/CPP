@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:48:59 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/30 15:29:41 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/28 14:28:38 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,5 @@ int main(void){
 	}
 	for (int i = 0; i < 6; i++)	// FREE ANIMALS
 		delete Animals[i];
-	system("leaks Polymorphism");
 	return (0);
 }
