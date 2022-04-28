@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:15:48 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/21 14:47:22 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/28 17:59:56 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	identify(Base *p){
 void	identify(Base &p){
 	try{
 		A	&a = dynamic_cast<A &>(p);
-			static_cast<void>(a);
+		static_cast<void>(a);
 		std::cout << "Class A";
 	}
 	catch (std::bad_cast &e){
@@ -70,18 +70,25 @@ int	main(void){
 	Base	*base6 = generate();
 	Base	*base7 = generate();
 
+	std::cout << std::endl << "-__Base 1__-" << std::endl;
 	identify(base1);
 	identify(*base1);
+	std::cout << std::endl << "-__Base 2__-" << std::endl;
 	identify(base2);
 	identify(*base2);
+	std::cout << std::endl << "-__Base 3__-" << std::endl;
 	identify(base3);
 	identify(*base3);
+	std::cout << std::endl << "-__Base 4__-" << std::endl;
 	identify(base4);
 	identify(*base4);
+	std::cout << std::endl << "-__Base 5__-" << std::endl;
 	identify(base5);
 	identify(*base5);
+	std::cout << std::endl << "-__Base 6__-" << std::endl;
 	identify(base6);
 	identify(*base6);
+	std::cout << std::endl << "-__Base 7__-" << std::endl;
 	identify(base7);
 	identify(*base7);
 }
