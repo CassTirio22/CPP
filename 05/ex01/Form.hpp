@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:04:26 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/28 14:33:06 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/10 14:36:09 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Bureaucrat;
 
 class Form{
-protected:
+private:
 	std::string const	_name;
 	bool				_sign;
 	int const			_wGrade;
