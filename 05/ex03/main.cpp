@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:26:10 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/18 15:03:54 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:20:42 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,10 @@ int	main(void){
 		bill.executeForm(*ppf);
 		std::cout << "----------------------------------------------------------------------" << std::endl;
 		bill.executeForm(*scf);
+
+		delete rrf;
+		delete ppf;
+		delete scf;
 
 	}
 	catch (std::exception &e){
