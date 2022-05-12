@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 02:45:06 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/22 05:35:39 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/23 16:58:46 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,13 +107,15 @@ Fixed	Fixed::operator/(Fixed const &rhs) const{
 	return (this->_n / rhs.getRawBits());
 }
 
-Fixed	Fixed::operator++(int rhs){
+Fixed	Fixed::operator++(int nb){
+	(void)nb;
 	Fixed ret = *this;
 	this->_n++;
 	return (ret);
 }
 
-Fixed	Fixed::operator--(int rhs){
+Fixed	Fixed::operator--(int nb){
+	(void)nb;
 	Fixed	ret = *this;
 	this->_n--;
 	return (ret);

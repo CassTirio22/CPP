@@ -6,11 +6,11 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:23:42 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/17 14:25:50 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/03/23 16:19:55 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/phone_book.class.hpp"
+#include "includes/PhoneBook.hpp"
 
 int	main(void){
 	std::string	input;

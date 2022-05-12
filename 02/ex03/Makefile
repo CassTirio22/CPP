@@ -6,7 +6,7 @@
 #    By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 02:32:36 by ctirions          #+#    #+#              #
-#    Updated: 2022/03/22 07:13:22 by ctirions         ###   ########.fr        #
+#    Updated: 2022/03/23 17:00:47 by ctirions         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ BLUE        = $(shell tput -Txterm setaf 6)
 WHITE       = $(shell tput -Txterm setaf 7)
 RESET       = $(shell tput -Txterm sgr0)
 
-CXX   =	clang++
+CXX   =	c++
 FLAGS =	-Wall -Wextra -Werror -std=c++98
 
 SRCS  =	main.cpp	\
@@ -32,20 +32,23 @@ OBJS  =	$(SRCS:.cpp=.o)
 
 NAME  =	bsp
 
-.c.o:
-	@$(CXX) $(FLAGS) -c -I ./ $< -o $(<:.cpp=.o)
-	@echo "$(LIGHTPURPLE)$< compiled$(RESET)"
+.cpp.o:
+		@$(CXX) $(FLAGS) -c -I ./ $< -o $(<:.cpp=.o)
+		@echo "$(LIGHTPURPLE)$< compiled$(RESET)"
 
 $(NAME):	${OBJS}
-	$(CXX) -o $(NAME) $(FLAGS) $(OBJS)
+		@$(CXX) -o $(NAME) $(FLAGS) $(OBJS)
+		@echo "$(GREEN)$(NAME) created$(RESET)"
 
 all:		$(NAME)
 
 clean:
-	@rm -f $(OBJS)
+		@rm -f $(OBJS)
+		@echo "$(RED)Cleaned$(RESET)"
 
 fclean:     clean
-	@rm -f $(NAME)
+		@rm -f $(NAME)
+		@echo "$(RED)Fcleaned$(RESET)"
 
 re:			fclean all
 

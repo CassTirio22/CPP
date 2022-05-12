@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:01:25 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/21 18:10:24 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/20 16:54:30 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void    Account::_displayTimestamp(void){
 
 void	Account::displayAccountsInfos(void){
 	_displayTimestamp();
-	std::cout << " accounts:" << getNbAccounts() << ";totals:" << getTotalAmount() << ";deposits:" << getNbDeposits() << ";withdrawals:" << getNbWithdrawals() << std:: endl;
+	std::cout << " accounts:" << getNbAccounts() << ";total:" << getTotalAmount() << ";deposits:" << getNbDeposits() << ";withdrawals:" << getNbWithdrawals() << std:: endl;
 }
 
 void	Account::makeDeposit(int deposit){
@@ -87,7 +87,7 @@ bool	Account::makeWithdrawal(int withdrawal){
 
 int	Account::checkAmount(void) const{
 	_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";withdrawals:refused" << std::endl;
+	std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";withdrawal:refused" << std::endl;
 	return (1);
 }
 

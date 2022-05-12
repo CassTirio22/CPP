@@ -6,14 +6,13 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:57:36 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/21 17:08:02 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/21 12:22:23 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-Karen::Karen(){
-}
+Karen::Karen(){}
 Karen::~Karen(){}
 
 void	Karen::debug(void){

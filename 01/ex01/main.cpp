@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 11:48:03 by ctirions          #+#    #+#             */
-/*   Updated: 2022/03/18 12:51:31 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:34:23 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void){
     Zombie      *horde;
-    const int   N = 19;
+    const int   N = 4;
     
     horde = zombieHorde(N, "Babo");
     for (int i = 0; i < N; i++)
