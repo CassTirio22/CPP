@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:29:20 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/28 17:52:36 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/12 13:06:27 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		Convert::setValue(void){
 			this->_value = static_cast<float>(this->_str[1]);
 	}
 	else
-		this->_value = atof(this->_str.c_str());
+		this->_value = std::atof(this->_str.c_str());
 
 }
 
@@ -54,9 +54,9 @@ int			Convert::getType(void) const{
 }
 
 bool	Convert::isChar(void) const{
-	if (this->_str.length() == 1 && this->_str[0] >= 0 && this->_str[0] <= 127)
+	if (this->_str.length() == 1)
 		return (true);
-	if (this->_str.length() == 3 && this->_str[0] == '\'' && this->_str[2] == '\'' && (this->_str[1] >= 0 && this->_str[1] <= 127))
+	if (this->_str.length() == 3 && this->_str[0] == '\'' && this->_str[2] == '\'')
 		return (true);
 	return (false);
 }

@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:21:30 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/20 15:39:33 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:59:50 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <limits.h>
+# include <cstdlib>
 
 class Convert{
 private:
