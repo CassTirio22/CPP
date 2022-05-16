@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:15:48 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/28 17:59:56 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:05:53 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,19 @@ void	identify(Base &p){
 		static_cast<void>(a);
 		std::cout << "Class A";
 	}
-	catch (std::bad_cast &e){
+	catch (std::exception &e){
 		try{
 			B	&b = dynamic_cast<B &>(p);
 			static_cast<void>(b);
 			std::cout << "Class B";
 		}
-		catch(std::bad_cast &e){
+		catch(std::exception &e){
 			try{
 				C	&c = dynamic_cast<C &>(p);
 				static_cast<void>(c);
 				std::cout << "Class C";
 			}
-			catch (std::bad_cast &e){
+			catch (std::exception &e){
 				std::cout << "Unknow class";
 			}
 		}
@@ -91,4 +91,13 @@ int	main(void){
 	std::cout << std::endl << "-__Base 7__-" << std::endl;
 	identify(base7);
 	identify(*base7);
+
+	delete base1;
+	delete base2;
+	delete base3;
+	delete base4;
+	delete base5;
+	delete base6;
+	delete base7;
+	system("leaks identify");
 }

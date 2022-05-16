@@ -6,21 +6,23 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:14:31 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/28 17:52:56 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:01:51 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convert.hpp"
 
 void	convertAll(Convert &n){
-	float	value = n.getValue();
-	if (value < 0 || value > 127)
+	double	value = n.getValue();
+	if (value < 0 || value > 127 || n.getStr() == "nan" || n.getStr() == "nanf")
 		std::cout << "CHAR   : impossible" << std::endl;
 	else if (std::isprint(value))
 		std::cout << "CHAR   : '" << static_cast<char>(value) << "'" << std::endl;
 	else
 		std::cout << "CHAR   : non displayable" << std::endl;
-	if (value >= INT_MIN || value <= INT_MAX)
+	if (n.getStr() == "+inf" || n.getStr() == "+inff" || n.getStr() == "inf" || n.getStr() == "inff")
+		std::cout << "INT    : " << INT_MAX << std::endl;
+	else if (value >= INT_MIN || value <= INT_MAX)
 		std::cout << "INT    : " << static_cast<int>(value) << std::endl;
 	else
 		std::cout << "INT    : impossible" << std::endl;
@@ -46,7 +48,7 @@ int	main(int argc, char **argv){
 		std::cout << "Usage : ./convert <number or char>" << std::endl;
 		return (1);
 	}
-	n.setValue();
+	n.setValue(type);
 	convertAll(n);
 	return (0);
 }

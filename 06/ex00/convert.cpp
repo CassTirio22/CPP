@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:29:20 by ctirions          #+#    #+#             */
-/*   Updated: 2022/05/12 13:06:27 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:01:59 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ Convert	&Convert::operator=(Convert const &rhs){
 }
 
 std::string	Convert::getStr(void) const{ return (this->_str); }
-float		Convert::getValue(void) const{ return (this->_value); }
+double		Convert::getValue(void) const{ return (this->_value); }
 
-void		Convert::setValue(void){
-	if (this->isChar()){
+void		Convert::setValue(int type){
+	if (type == 3){
 		if (this->_str.length() == 1)
 			this->_value = static_cast<float>(this->_str[0]);
 		else

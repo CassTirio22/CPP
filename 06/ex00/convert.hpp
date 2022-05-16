@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:21:30 by ctirions          #+#    #+#             */
-/*   Updated: 2022/05/12 12:59:50 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:51:57 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Convert{
 private:
-	float		_value;
+	double		_value;
 	std::string	_str;
 
 public:
@@ -31,8 +31,8 @@ public:
 	Convert	&operator=(Convert const &rhs);	
 
 	std::string	getStr(void) const;
-	float		getValue(void) const;
-	void		setValue(void);
+	double		getValue(void) const;
+	void		setValue(int type);
 
 	int			getType(void) const;
 	bool		isChar(void) const;
