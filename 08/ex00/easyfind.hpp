@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:42:51 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/26 15:41:27 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:19:47 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <string>
 # include <iostream>
 # include <vector>
+
+class IntNotFound : public std::exception{
+public:
+	virtual const char *what() const throw(){ return ("Int not found."); }
+};
 
 void	printVal(int &val){
 	std::cout << val;
@@ -32,11 +37,12 @@ void	setVal(int &val){
 template <typename T>
 typename T::iterator	easyfind(T &cont, int const toFind){
 	if (cont.begin() == cont.end())
-		throw (std::exception());
+		throw (IntNotFound());
 	typename T::iterator	it = std::find(cont.begin(), cont.end(), toFind);
 	if (it == cont.end())
-		throw (std::exception());
+		throw (IntNotFound());
 	return (it);
 }
+
 
 #endif
