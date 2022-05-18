@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 18:58:42 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/26 12:04:24 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:31:55 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,40 @@ class Array{
 private:
 	T		*_array;
 	size_t	_size;
+
 public:
 	Array(void) : _size(0){
 		this->_array = new T[0];
 	}
+
 	Array(unsigned int n) : _size(n){
+		T	*tmp = new T();
+		for (size_t i = 0; i < n; i++)
+			this->_array[i] = *tmp;
+		delete tmp;
 		this->_array = new T[n]();
 	}
+
 	Array(Array const &src){
-		this->_array = src.getArray();
-		this->_size = src.getSize();
+		this->_array = new T[src.size()];
+		for (size_t i = 0; i < src.size(); i++)
+			this->_array[i] = src.getArray()[i];
+		this->_size = src.size();
 	}
+
 	~Array(void){
 		delete [] this->_array;
 	}
 
 	Array const	&operator=(Array const &rhs){
-		this->_array = rhs.getArray();
-		this->_size = rhs.getSize();
+		delete [] this->_array;
+		this->_array = new T[rhs.size()];
+		for (size_t i = 0; i < rhs.size(); i++)
+			this->_array[i] = rhs.getArray()[i];
+		this->_size = rhs.size();
 		return (*this);
 	}
+	
 	T	&operator[](size_t pos){
 		if (pos < 0 || pos > this->size())
 			throw (std::out_of_range("Invalid index!"));

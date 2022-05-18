@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 18:11:01 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/25 18:31:30 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:34:10 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	decrement(T &a){
 }
 
 template <typename T>
-void	iter(T array[], int size, void (*fct)(T &a)){
-	for (int i = 0; i < size; i++)
+void	iter(T *array, size_t size, void (*fct)(T &a)){
+	for (size_t i = 0; i < size; i++)
 		fct(array[i]);
 }
 

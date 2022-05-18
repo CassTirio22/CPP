@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:49:04 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/25 18:00:14 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:40:43 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ T const	&max(T const &a, T const &b){
 
 template <typename T>
 void	swap(T &a, T &b){
-	T	&tmp = a;
+	T	tmp = a;
 	a = b;
 	b = tmp;
 }
