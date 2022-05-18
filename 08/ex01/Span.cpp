@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:45:05 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/27 15:56:43 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:35:20 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ Span::~Span(void){
 }
 Span::Span(Span const &src){
 	this->_size = src.getSize();
-	this->_array = new std::list<int>(src._array->begin(), src._array->end());
+	this->_array = new std::list<int>(src.getArray()->begin(), src.getArray()->end());
+}
+
+Span const	&Span::operator=(Span const &rhs){
+	this->_size = rhs.getSize();
+	delete this->_array;
+	this->_array = new std::list<int>(rhs.getArray()->begin(), rhs.getArray()->end());
+	return (*this);
 }
 
 unsigned int	Span::getSize(void) const{
