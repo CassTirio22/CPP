@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 15:15:38 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/27 15:55:17 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/21 11:44:50 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ int	main(void){
 		{
 			std::cerr << e.what() << std::endl;
 		}
-		
 		
 	}
 	return (0);
