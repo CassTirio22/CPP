@@ -6,13 +6,14 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:15:48 by ctirions          #+#    #+#             */
-/*   Updated: 2022/05/16 16:05:53 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/21 10:58:26 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
 Base	*generate(void){
+	srand(time(NULL));
 	int i = rand() % 3;
 
 	if (!i)
@@ -62,42 +63,13 @@ void	identify(Base &p){
 }
 
 int	main(void){
-	Base	*base1 = generate();
-	Base	*base2 = generate();
-	Base	*base3 = generate();
-	Base	*base4 = generate();
-	Base	*base5 = generate();
-	Base	*base6 = generate();
-	Base	*base7 = generate();
+	Base	*base = generate();
 
-	std::cout << std::endl << "-__Base 1__-" << std::endl;
-	identify(base1);
-	identify(*base1);
-	std::cout << std::endl << "-__Base 2__-" << std::endl;
-	identify(base2);
-	identify(*base2);
-	std::cout << std::endl << "-__Base 3__-" << std::endl;
-	identify(base3);
-	identify(*base3);
-	std::cout << std::endl << "-__Base 4__-" << std::endl;
-	identify(base4);
-	identify(*base4);
-	std::cout << std::endl << "-__Base 5__-" << std::endl;
-	identify(base5);
-	identify(*base5);
-	std::cout << std::endl << "-__Base 6__-" << std::endl;
-	identify(base6);
-	identify(*base6);
-	std::cout << std::endl << "-__Base 7__-" << std::endl;
-	identify(base7);
-	identify(*base7);
+	std::cout << std::endl << "-__Base __-" << std::endl;
+	identify(base);
+	identify(*base);
 
-	delete base1;
-	delete base2;
-	delete base3;
-	delete base4;
-	delete base5;
-	delete base6;
-	delete base7;
-	system("leaks identify");
+	delete base;
+
+	return (0);
 }

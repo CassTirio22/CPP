@@ -62,6 +62,12 @@
 		"vector": "cpp",
 		"diamondtrap": "cpp",
 		"iomanip": "cpp",
+<<<<<<< HEAD
 		"list": "cpp"
+=======
+		"deque": "cpp",
+		"list": "cpp",
+		"stack": "cpp"
+>>>>>>> 1a8effbdca767dee4bb8a92dbe0d3d6294131180
 	}
 }

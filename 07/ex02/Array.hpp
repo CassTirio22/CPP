@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 18:58:42 by ctirions          #+#    #+#             */
-/*   Updated: 2022/05/18 16:31:55 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/21 10:50:54 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ public:
 	}
 
 	Array(unsigned int n) : _size(n){
+		this->_array = new T[n]();
 		T	*tmp = new T();
 		for (size_t i = 0; i < n; i++)
 			this->_array[i] = *tmp;
 		delete tmp;
-		this->_array = new T[n]();
 	}
 
 	Array(Array const &src){
