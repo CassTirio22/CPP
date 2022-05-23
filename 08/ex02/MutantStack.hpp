@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:54:23 by ctirions          #+#    #+#             */
-/*   Updated: 2022/05/21 11:57:45 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:58:47 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ typename MutantStack<T>::iterator	MutantStack<T>::end(void){
 
 template <typename T>
 typename MutantStack<T>::r_iterator	MutantStack<T>::rbegin(void){
-	return (this->c.begin());
+	return (this->c.rbegin());
 }
 
 template <typename T>
 typename MutantStack<T>::r_iterator	MutantStack<T>::rend(void){
-	return (this->c.end());
+	return (this->c.rend());
 }
 
 #endif
