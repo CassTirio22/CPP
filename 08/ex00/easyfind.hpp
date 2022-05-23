@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:42:51 by ctirions          #+#    #+#             */
-/*   Updated: 2022/05/18 18:19:47 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/23 13:47:08 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	setVal(int &val){
 }
 
 template <typename T>
-typename T::iterator	easyfind(T &cont, int const toFind){
+typename T::iterator	easyfind(T cont, int const toFind){
 	if (cont.begin() == cont.end())
 		throw (IntNotFound());
 	typename T::iterator	it = std::find(cont.begin(), cont.end(), toFind);

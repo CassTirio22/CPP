@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:45:05 by ctirions          #+#    #+#             */
-/*   Updated: 2022/05/18 18:35:20 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:40:44 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::list<int>	*Span::getArray(void) const{
 
 void	Span::addNumber(int nb){
 	if (this->_array->size() == this->_size)
-		throw (Span::SpanException());
+		throw (Span::TooMuchNbr());
 	this->_array->push_back(nb);
 }
 
@@ -53,7 +53,7 @@ void	Span::addNumbers(std::list<int>::iterator begin, std::list<int>::iterator e
 
 int		Span::shortestSpan(void) const{
 	if (this->_array->size() == 1 || !this->_array->size())
-		throw (Span::SpanException());
+		throw (Span::NotEnoughNbr());
 	int	shortest = INT_MAX;
 	std::list<int>::iterator it1 = this->_array->begin();
 	std::list<int>::iterator it2 = this->_array->begin();
@@ -68,14 +68,12 @@ int		Span::shortestSpan(void) const{
 		it1++;
 		it2++;
 	}
-	if (shortest == INT_MAX)
-		throw (Span::SpanException());
 	return (shortest);
 }
 
 int		Span::longestSpan(void) const{
 	if (this->_array->size() == 1 || !this->_array->size())
-		throw (Span::SpanException());
+		throw (Span::NotEnoughNbr());
 	int	longest = -1;
 	std::list<int>::iterator it1 = this->_array->begin();
 	std::list<int>::iterator it2 = this->_array->begin();
@@ -90,7 +88,5 @@ int		Span::longestSpan(void) const{
 		it1++;
 		it2++;
 	}
-	if (longest == -1)
-		throw (Span::SpanException());
 	return (longest);
 }

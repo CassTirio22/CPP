@@ -6,7 +6,7 @@
 /*   By: ctirions <ctirions@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 15:15:38 by ctirions          #+#    #+#             */
-/*   Updated: 2022/04/27 15:55:17 by ctirions         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:44:47 by ctirions         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	main(void){
 		Span sp = Span(50);
 		int arr[] = { -10, 0, 10 };
 		int n = sizeof(arr) / sizeof(arr[0]);
-	
 		std::list<int> lst(arr, arr + n);
 		sp.addNumbers(lst.begin(), lst.end());
 		std::cout << "Shortest : " << sp.shortestSpan() << std::endl;
@@ -67,8 +66,7 @@ int	main(void){
 	}
 	std::cout << "----------------------------------" << std::endl;
 	{
-		try
-		{
+		try{
 			Span sp = Span(3);
 			sp.addNumber(6);
 			sp.addNumber(3);
@@ -76,13 +74,11 @@ int	main(void){
 			sp.addNumber(9);
 			sp.addNumber(11);
 		}
-		catch(const std::exception& e)
-		{
+		catch(const std::exception& e){
 			std::cerr << e.what() << std::endl;
 		}
 
-		try
-		{
+		try{
 			Span sp = Span(3);
 			int arr[] = { 0, 10, -10, 42, 19 };
 			int n = sizeof(arr) / sizeof(arr[0]);
@@ -90,12 +86,27 @@ int	main(void){
 			std::list<int> lst(arr, arr + n);
 			sp.addNumbers(lst.begin(), lst.end());
 		}
-		catch(const std::exception& e)
-		{
+		catch(const std::exception& e){
 			std::cerr << e.what() << std::endl;
 		}
-		
-		
+		try{
+			Span sp(10);
+			sp.addNumber(1);
+
+			std::cout << "Shortest : " << sp.shortestSpan() << std::endl;
+		}
+		catch (std::exception &e){
+			std::cout << e.what() << std::endl;
+		}
+		try{
+			Span sp(10);
+			sp.addNumber(1);
+
+			std::cout << "Longest  : " << sp.longestSpan() << std::endl;
+		}
+		catch (std::exception &e){
+			std::cout << e.what() << std::endl;
+		}
 	}
 	return (0);
 }
